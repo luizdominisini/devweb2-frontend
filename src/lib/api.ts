@@ -24,7 +24,7 @@ export type postType = {
 
 export async function createUser(userCreate: userCreateType) {
   const response = await fetch(
-    `https://devweb2-prisma.vercel.app/user/create`,
+    `https://devweb2-prisma-production.up.railway.app//user/create`,
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -38,9 +38,12 @@ export async function createUser(userCreate: userCreateType) {
 }
 
 export async function listUser(): Promise<userType[]> {
-  const response = await fetch(`https://devweb2-prisma.vercel.app/user/list`, {
-    method: "GET",
-  });
+  const response = await fetch(
+    `https://devweb2-prisma-production.up.railway.app//user/list`,
+    {
+      method: "GET",
+    }
+  );
 
   const { users } = await response.json();
 
@@ -49,7 +52,7 @@ export async function listUser(): Promise<userType[]> {
 
 export async function deleteUser(id: number) {
   const response = await fetch(
-    `https://devweb2-prisma.vercel.app/user/delete/${id}`,
+    `https://devweb2-prisma-production.up.railway.app//user/delete/${id}`,
     {
       method: "DELETE",
     }
@@ -61,7 +64,7 @@ export async function deleteUser(id: number) {
 export async function updateUser(id: number, update: userCreateType) {
   console.log(update);
   const response = await fetch(
-    `https://devweb2-prisma.vercel.app/user/update/${id}`,
+    `https://devweb2-prisma-production.up.railway.app//user/update/${id}`,
     {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
@@ -74,7 +77,7 @@ export async function updateUser(id: number, update: userCreateType) {
 
 export async function createPost(postCreate: postCreateType) {
   const response = await fetch(
-    `https://devweb2-prisma.vercel.app/post/create`,
+    `https://devweb2-prisma-production.up.railway.app//post/create`,
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -86,9 +89,12 @@ export async function createPost(postCreate: postCreateType) {
 }
 
 export async function listPost(): Promise<postType[]> {
-  const response = await fetch(`https://devweb2-prisma.vercel.app/post/list`, {
-    method: "GET",
-  });
+  const response = await fetch(
+    `https://devweb2-prisma-production.up.railway.app//post/list`,
+    {
+      method: "GET",
+    }
+  );
 
   const { posts } = await response.json();
 
@@ -97,7 +103,7 @@ export async function listPost(): Promise<postType[]> {
 
 export async function deletePost(id: number) {
   const response = await fetch(
-    `https://devweb2-prisma.vercel.app/post/delete/${id}`,
+    `https://devweb2-prisma-production.up.railway.app//post/delete/${id}`,
     {
       method: "DELETE",
     }
@@ -108,7 +114,7 @@ export async function deletePost(id: number) {
 
 export async function updatePost(id: number, update: postCreateType) {
   const response = await fetch(
-    `https://devweb2-prisma.vercel.app/post/update/${id}`,
+    `https://devweb2-prisma-production.up.railway.app//post/update/${id}`,
     {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
