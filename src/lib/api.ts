@@ -23,11 +23,14 @@ export type postType = {
 };
 
 export async function createUser(userCreate: userCreateType) {
-  const response = await fetch(`http://localhost:3001/user/create`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(userCreate),
-  });
+  const response = await fetch(
+    `https://devweb2-prisma.vercel.app/user/create`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(userCreate),
+    }
+  );
 
   console.log(response);
 
@@ -35,7 +38,7 @@ export async function createUser(userCreate: userCreateType) {
 }
 
 export async function listUser(): Promise<userType[]> {
-  const response = await fetch(`http://localhost:3001/user/list`, {
+  const response = await fetch(`https://devweb2-prisma.vercel.app/user/list`, {
     method: "GET",
   });
 
@@ -45,36 +48,45 @@ export async function listUser(): Promise<userType[]> {
 }
 
 export async function deleteUser(id: number) {
-  const response = await fetch(`http://localhost:3001/user/delete/${id}`, {
-    method: "DELETE",
-  });
+  const response = await fetch(
+    `https://devweb2-prisma.vercel.app/user/delete/${id}`,
+    {
+      method: "DELETE",
+    }
+  );
 
   return response.json();
 }
 
 export async function updateUser(id: number, update: userCreateType) {
   console.log(update);
-  const response = await fetch(`http://localhost:3001/user/update/${id}`, {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(update),
-  });
+  const response = await fetch(
+    `https://devweb2-prisma.vercel.app/user/update/${id}`,
+    {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(update),
+    }
+  );
 
   return response.json();
 }
 
 export async function createPost(postCreate: postCreateType) {
-  const response = await fetch(`http://localhost:3001/post/create`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(postCreate),
-  });
+  const response = await fetch(
+    `https://devweb2-prisma.vercel.app/post/create`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(postCreate),
+    }
+  );
 
   return response.json();
 }
 
 export async function listPost(): Promise<postType[]> {
-  const response = await fetch(`http://localhost:3001/post/list`, {
+  const response = await fetch(`https://devweb2-prisma.vercel.app/post/list`, {
     method: "GET",
   });
 
@@ -84,19 +96,25 @@ export async function listPost(): Promise<postType[]> {
 }
 
 export async function deletePost(id: number) {
-  const response = await fetch(`http://localhost:3001/post/delete/${id}`, {
-    method: "DELETE",
-  });
+  const response = await fetch(
+    `https://devweb2-prisma.vercel.app/post/delete/${id}`,
+    {
+      method: "DELETE",
+    }
+  );
 
   return response.json();
 }
 
 export async function updatePost(id: number, update: postCreateType) {
-  const response = await fetch(`http://localhost:3001/post/update/${id}`, {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(update),
-  });
+  const response = await fetch(
+    `https://devweb2-prisma.vercel.app/post/update/${id}`,
+    {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(update),
+    }
+  );
 
   return response.json();
 }
